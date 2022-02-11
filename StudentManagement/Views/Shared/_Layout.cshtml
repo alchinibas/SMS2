@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Student Management System</title>
+    @Styles.Render("~/Content/css")
+    <style type="text/css">
+        body *{
+            box-sizing:border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="row mt-0 pt-0">
+        <div class="col-3 m-0 p-0">
+            <div class="sticky-top full-height bg-dark pl-3">
+                <h2 class="text-center p-4 font-weight-bold text-white">SMS</h2>
+                @Html.ActionLink("Student", "Index", "Students", null, new {@class="col-12 btn btn-dark text-left"})
+                @Html.ActionLink("Roles", "Index", "UserRoles", null, new {@class="col-12 btn btn-dark text-left"})
+                @Html.ActionLink("Major Subject", "Index", "MajorSubjects", null, new {@class="col-12 btn btn-dark text-left"})
+                @Html.ActionLink("Teacher", "Index", "Teachers", null, new {@class="col-12 btn btn-dark text-left"})
+                @Html.ActionLink("Department", "Index", "Departments", null, new {@class="col-12 btn btn-dark text-left"})
+                @Html.ActionLink("Users", "Index", "Users", null, new {@class="col-12 btn btn-dark text-left"})
+                @Html.ActionLink("Designation", "Index", "Designations", null, new {@class="col-12 btn btn-dark text-left"})
+            </div>
+
+        </div>
+        <div class="col-9 ml-0 pl-0 overflow-hidden">
+            <div class=" ml-0 p-4 pl-0 bg-dark w-100 navbar text-white">
+                <div class="d-flex justify-content-between container text-white">
+                    <div class="items-left">
+                        <div class="nav-item">Home</div>
+                    </div>
+                    <div class="items-right">
+                        <div class="nav-item">
+                            @Html.ActionLink("Logout", "Logout", "Users")
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-12 ml-2 " style="overflow:auto;">
+                @RenderBody()
+                <hr />
+                <footer>
+                    <p>&copy; @DateTime.Now.Year - Student Management System</p>
+                </footer>
+            </div>
+        </div>
+        
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script src="~/Scripts/layout.js"></script>
+</body>
+</html>
